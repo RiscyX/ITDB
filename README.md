@@ -11,9 +11,6 @@
 - Admin: CRUD a játékokra, rendelések megtekintése.
 - Saját CSS, reszponzív design.
 
-## Fájlstruktúra
-Lásd a projektmappát és a Task.md-t.
-
 ## Fejlesztői követelmények
 - PHP 8+, MySQL, Apache
 - Nincs CSS framework, minden stílus saját.
