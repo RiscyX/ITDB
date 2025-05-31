@@ -16,25 +16,27 @@ $orders = admin_get_all_orders();
 <?php include '../includes/header.php'; ?>
 <main>
     <h1>Rendelések</h1>
-    <table>
-        <tr><th>ID</th><th>Név</th><th>Email</th><th>Összeg</th><th>Dátum</th><th>Játékok</th></tr>
-        <?php foreach ($orders as $o): ?>
-        <tr>
-            <td><?= $o['id'] ?></td>
-            <td><?= htmlspecialchars($o['customer_name']) ?></td>
-            <td><?= htmlspecialchars($o['customer_email']) ?></td>
-            <td><?= number_format($o['total'],0,',',' ') ?> Ft</td>
-            <td><?= $o['created_at'] ?></td>
-            <td>
-                <ul>
-                <?php foreach ($o['items'] as $item): ?>
-                    <li><?=htmlspecialchars($item['title'])?> (<?= $item['quantity'] ?> db)</li>
-                <?php endforeach; ?>
-                </ul>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <div class="table-responsive">
+      <table>
+          <tr><th>ID</th><th>Név</th><th>Email</th><th>Összeg</th><th>Dátum</th><th>Játékok</th></tr>
+          <?php foreach ($orders as $o): ?>
+          <tr>
+              <td><?= $o['id'] ?></td>
+              <td><?= htmlspecialchars($o['customer_name']) ?></td>
+              <td><?= htmlspecialchars($o['customer_email']) ?></td>
+              <td><?= number_format($o['total'],0,',',' ') ?> Ft</td>
+              <td><?= $o['created_at'] ?></td>
+              <td>
+                  <ul>
+                  <?php foreach ($o['items'] as $item): ?>
+                      <li><?=htmlspecialchars($item['title'])?> (<?= $item['quantity'] ?> db)</li>
+                  <?php endforeach; ?>
+                  </ul>
+              </td>
+          </tr>
+          <?php endforeach; ?>
+      </table>
+    </div>
 </main>
 <?php include '../includes/footer.php'; ?>
 </body>
