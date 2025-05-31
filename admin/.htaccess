@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Admin felület"
+AuthUserFile "c:/xampp/htdocs/ITDB/admin/.htpasswd"
+Require valid-user
+Options -Indexes
