@@ -28,13 +28,7 @@ foreach ($cart_games as $g) {
     <script src="assets/js/cart.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php">Főoldal</a>
-        <a href="search.php">Keresés</a>
-        <a href="cart.php">Kosár</a>
-        <a href="about.php">Rólunk</a>
-        <a href="contact.php">Kapcsolat</a>
-    </nav>
+<?php include 'header.php'; ?>
     <main>
         <h1>Kosár</h1>
         <div class="cart-list">

@@ -26,20 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_SESSION['cart']) && $_SESSI
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Megrendelés - <?=$site_name?></title>
+    <title>Megrendelés - <?= $site_name ?></title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php">Főoldal</a>
-        <a href="search.php">Keresés</a>
-        <a href="cart.php">Kosár</a>
-        <a href="about.php">Rólunk</a>
-        <a href="contact.php">Kapcsolat</a>
-    </nav>
-    <main>
-        <div class="alert"> <?=htmlspecialchars($msg)?> </div>
-        <a class="btn" href="index.php">Vissza a főoldalra</a>
-    </main>
+<?php include 'header.php'; ?>
+<main>
+    <div class="alert"> <?= htmlspecialchars($msg) ?> </div>
+    <a class="btn" href="index.php">Vissza a főoldalra</a>
+</main>
 </body>
 </html>

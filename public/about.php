@@ -10,13 +10,7 @@ require_once __DIR__ . '/../config/config.php';
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php">Főoldal</a>
-        <a href="search.php">Keresés</a>
-        <a href="cart.php">Kosár</a>
-        <a href="about.php">Rólunk</a>
-        <a href="contact.php">Kapcsolat</a>
-    </nav>
+<?php include 'header.php'; ?>
     <main>
         <h1>Rólunk</h1>
         <p>Az ITDB egy fiktív videojáték webshop, ahol a legjobb játékokat találod PC-re, PlayStation-re és Switch-re.</p>

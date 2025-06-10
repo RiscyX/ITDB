@@ -18,13 +18,7 @@ if (isset($_GET['q'])) {
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php">Főoldal</a>
-        <a href="search.php">Keresés</a>
-        <a href="cart.php">Kosár</a>
-        <a href="about.php">Rólunk</a>
-        <a href="contact.php">Kapcsolat</a>
-    </nav>
+<?php include 'header.php'; ?>
     <main>
         <h1>Keresés</h1>
         <form method="get">

@@ -35,3 +35,16 @@ function admin_get_all_orders() {
     }
     return $orders;
 }
+
+function admin_get_all_messages(): array
+{
+    global $pdo;
+
+    $stmt = $pdo->query(
+        'SELECT id, name, email, message, date 
+         FROM messages 
+         ORDER BY date DESC'
+    );
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

@@ -1,14 +1,22 @@
 <?php
+
 require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/db_config.php';
+require_once __DIR__ . '/../functions/public_functions.php';
+
 $msg = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
+    $name    = trim($_POST['name']    ?? '');
+    $email   = trim($_POST['email']   ?? '');
     $message = trim($_POST['message'] ?? '');
-    if ($name && $email && $message) {
-        $msg = 'Köszönjük az üzenetet!';
-    } else {
+
+    if (!$name || !$email || !$message) {
         $msg = 'Minden mező kitöltése kötelező!';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $msg = 'Érvénytelen e-mail cím!';
+    } else {
+        $saved = create_message($name, $email, $message);
+        $msg   = $saved ? 'Köszönjük az üzenetet!' : 'Hiba történt az üzenet mentésekor.';
     }
 }
 ?>
@@ -21,13 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php">Főoldal</a>
-        <a href="search.php">Keresés</a>
-        <a href="cart.php">Kosár</a>
-        <a href="about.php">Rólunk</a>
-        <a href="contact.php">Kapcsolat</a>
-    </nav>
+<?php include 'header.php'; ?>
     <main>
         <h1>Kapcsolat</h1>
         <?php if ($msg): ?>

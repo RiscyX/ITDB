@@ -45,5 +45,5 @@ CREATE TABLE IF NOT EXISTS order_items (
 INSERT INTO games (title, platform, price, stock, image, description) VALUES
 ('The Witcher 3', 'PC', 8990, 10, 'witcher3.jpg', 'RPG, open world'),
 ('Cyberpunk 2077', 'PC', 12990, 8, 'cyberpunk2077.jpg', 'Futuristic RPG'),
-('God of War', 'PS5', 15990, 5, 'godofwar.jpg', 'Action adventure'),
+('God of War', 'PS5', 15990, 5, 'game_683af4e4596237.48775723.png', 'Action adventure'),
 ('Mario Kart 8', 'Switch', 13990, 12, 'mariokart8.jpg', 'Racing fun for all ages');

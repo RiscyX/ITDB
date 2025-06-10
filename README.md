@@ -4,7 +4,7 @@
 1. Másold a projektet a webszerver (pl. XAMPP) `htdocs` mappájába.
 2. Importáld a `db.sql`-t a phpMyAdmin-ban vagy MySQL-ben.
 3. Állítsd be a `config/db_config.php`-ban az adatbázis elérést.
-4. Az admin felülethez állíts be .htaccess + .htpasswd védelmet az `admin/` mappában.
+4. Az admin felülethez állíts be .htaccess + .htpasswd védelmet az `admin/` mappában. (Alapból admin:admin)
 
 ## Fő funkciók
 - Publikus webshop: játékok listázása, keresés, kosár, rendelés.

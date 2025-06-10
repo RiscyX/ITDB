@@ -1,5 +1,4 @@
 <?php
-// Adatbázis konfiguráció
 $db_host = 'localhost';
 $db_name = 'it';
 $db_user = 'it_user';

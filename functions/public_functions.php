@@ -55,3 +55,24 @@ function create_order($name, $email, $cart) {
         return false;
     }
 }
+function create_message($name, $email, $message)
+{
+    global $pdo;
+
+    $name    = trim($name);
+    $email   = trim($email);
+    $message = trim($message);
+
+    try {
+        $stmt = $pdo->prepare(
+            'INSERT INTO messages (name, email, message, date)
+             VALUES (?, ?, ?, NOW())'
+        );
+        $stmt->execute([$name, $email, $message]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (PDOException $e) {
+        return false;
+    }
+}
+

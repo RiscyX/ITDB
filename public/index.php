@@ -8,30 +8,25 @@ require_once __DIR__ . '/../functions/public_functions.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?=$site_name?></title>
+    <title><?= $site_name ?></title>
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.php">Főoldal</a>
-        <a href="search.php">Keresés</a>
-        <a href="cart.php">Kosár</a>
-        <a href="about.php">Rólunk</a>
-        <a href="contact.php">Kapcsolat</a>
-    </nav>
-    <main>
-        <h1>Videojáték kínálat</h1>
-        <div class="games">
-            <?php foreach (get_all_games() as $game): ?>
-                <div class="card">
-                    <img src="assets/images/<?=htmlspecialchars($game['image'])?>" alt="<?=htmlspecialchars($game['title'])?>">
-                    <h2><?=htmlspecialchars($game['title'])?></h2>
-                    <p><?=htmlspecialchars($game['platform'])?></p>
-                    <p><b><?=number_format($game['price'],0,',',' ')?> Ft</b></p>
-                    <a class="btn" href="game.php?id=<?= $game['id'] ?>">Részletek</a>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </main>
+<?php include 'header.php'; ?>
+<main>
+    <h1>Videojáték kínálat</h1>
+    <div class="games">
+        <?php foreach (get_all_games() as $game): ?>
+            <div class="card">
+                <img src="assets/images/<?= htmlspecialchars($game['image']) ?>"
+                     alt="<?= htmlspecialchars($game['title']) ?>">
+                <h2><?= htmlspecialchars($game['title']) ?></h2>
+                <p><?= htmlspecialchars($game['platform']) ?></p>
+                <p><b><?= number_format($game['price'], 0, ',', ' ') ?> Ft</b></p>
+                <a class="btn" href="game.php?id=<?= $game['id'] ?>">Részletek</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</main>
 </body>
 </html>
